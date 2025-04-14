@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопка ХЭК</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        #hek-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        #hek-button:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        #hek-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <button id="hek-button">ХЭК</button>
+    
+    <audio id="hek-audio" src="hak.mp3"></audio>
+    <!-- Замените ссылку на свой аудиофайл -->
+    
+    <script>
+        const button = document.getElementById('hek-button');
+        const audio = document.getElementById('hek-audio');
+        
+        button.addEventListener('click', () => {
+            audio.currentTime = 0; // Перемотка на начало (если уже играет)
+            audio.play();
+        });
+    </script>
+</body>
+</html>
